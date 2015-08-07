@@ -8,6 +8,7 @@ FullscreenWindow::FullscreenWindow(QWidget *parent) : QWidget(parent)
 	QDesktopWidget *desktop = new QDesktopWidget();
 	this->resize( desktop->size() );
 
+	this->setCursor(Qt::BlankCursor);
 	this->setFocusPolicy( Qt::StrongFocus );
 	this->setAttribute(Qt::WA_QuitOnClose, true);
 
