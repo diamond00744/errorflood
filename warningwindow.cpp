@@ -15,6 +15,7 @@ WarningWindow::WarningWindow(QWidget *parent) :
 	connect(timer, SIGNAL(timeout()), this, SLOT(on_timer_tick()));
 
 	ui->setupUi(this);
+	ui->icon->setPixmap(QPixmap("images/icons/stop_by_emey87.png"));
 }
 
 WarningWindow::~WarningWindow()

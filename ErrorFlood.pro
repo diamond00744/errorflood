@@ -31,4 +31,5 @@ HEADERS += \
 
 DISTFILES += \
     readme.txt \
-    images/bsod.gif
+    images/bsod.gif \
+    images/icons/stop_by_emey87.png
