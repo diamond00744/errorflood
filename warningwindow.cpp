@@ -104,8 +104,8 @@ void WarningWindow::on_timer_tick()
 		currentState = stBegin;
 		currentClick = 0;
 		QString winTitle;
-		winTitle += "ErrorFlood ";
-		winTitle += VER;
+		winTitle += "ErrorFlood";
+		//winTitle += VER;
 		setWindowTitle(winTitle);
 		ui->icon->setPixmap(QPixmap("images/icons/smile_by_everaldo_coelho.png"));
 		ui->title->setText("He-hey! That was just a joke! Have fun!");
