@@ -26,7 +26,7 @@ void WarningWindow::on_btnOK_clicked()
 {
 	currentClick++;
 	if (currentClick == 6) {
-		state = 1; //begin state
+		currentState = stBegin;
 		currentTick = 0;
 		timer->setInterval(500);
 		timer->start();
@@ -36,7 +36,7 @@ void WarningWindow::on_btnOK_clicked()
 void WarningWindow::on_timer_tick()
 {
 	int nextWidth, nextHeight;
-	if (state == 1) {
+	if (currentState == stBegin) {
 		if (currentTick < 5) {
 			nextWidth = 30 + 50 * currentTick;
 			nextHeight = 30 + 50 * currentTick;
@@ -60,7 +60,7 @@ void WarningWindow::on_timer_tick()
 				sec[i]->close();
 
 			currentTick = -2;
-			state = 2; //bsod state
+			currentState = stBSOD;
 			bsod = new BSODWindow();
 			bsod->show();
 			bsod->setFocus();
@@ -68,7 +68,7 @@ void WarningWindow::on_timer_tick()
 			timer->setInterval(2000);
 		}
 
-	} else if (state == 2) {
+	} else if (currentState == stBSOD) {
 		if (currentTick == -1) {
 			timer->setInterval(50);
 		} else {
@@ -83,7 +83,7 @@ void WarningWindow::on_timer_tick()
 				for (int i = 0; i <= currentTick; i++)
 					sec[i]->close();
 				bsod->hide();
-				state = 3; //black state
+				currentState = stOff;
 				show();
 				black = new BlackWindow();
 				black->show();
@@ -93,13 +93,13 @@ void WarningWindow::on_timer_tick()
 			}
 		}
 
-	} else if (state == 3) {
+	} else if (currentState == stOff) {
 		timer->stop();
 		bsod->close();
 		black->close();
 
 		// Do it again if you want!
-		state = 1;
+		currentState = stBegin;
 		currentClick = 0;
 		show();
 		setWindowTitle("Created by Diamond00744");

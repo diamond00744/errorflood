@@ -30,7 +30,8 @@ private:
 	QTimer *timer;
 	short currentClick; // current OK button click counter
 	short currentTick; // current timer tick counter
-	short state; // flags of current state: 1 - begin, 2 - bsod, 3 - off
+	enum state {stBegin, stBSOD, stOff}; // flags of current state
+	state currentState;
 	short deskWidth, deskHeight; // system resolution
 
 	Ui::WarningWindow *ui; // window UI
