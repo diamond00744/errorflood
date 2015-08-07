@@ -14,6 +14,8 @@ WarningWindow::WarningWindow(QWidget *parent) :
 	timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(on_timer_tick()));
 
+	QIcon icon("warning_by_turbomilk.ico");
+	setWindowIcon(icon);
 	ui->setupUi(this);
 	ui->icon->setPixmap(QPixmap("images/icons/stop_by_emey87.png"));
 }
@@ -101,11 +103,14 @@ void WarningWindow::on_timer_tick()
 
 		currentState = stBegin;
 		currentClick = 0;
-		show();
-		setWindowTitle("ErrorFlood");
+		QString winTitle;
+		winTitle += "ErrorFlood ";
+		winTitle += VER;
+		setWindowTitle(winTitle);
 		ui->icon->setPixmap(QPixmap("images/icons/smile_by_everaldo_coelho.png"));
 		ui->title->setText("He-hey! That was just a joke! Have fun!");
 		ui->text->setText("<p>Do it again if you want! ;)</p><p><i>Created by Diamond00744</i></p>");
+		show();
 	}
 
 	currentTick++;
