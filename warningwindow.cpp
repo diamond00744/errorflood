@@ -99,11 +99,13 @@ void WarningWindow::on_timer_tick()
 		bsod->close();
 		black->close();
 
-		// Do it again if you want!
 		currentState = stBegin;
 		currentClick = 0;
 		show();
-		setWindowTitle("Created by Diamond00744");
+		setWindowTitle("ErrorFlood");
+		ui->icon->setPixmap(QPixmap("images/icons/smile_by_everaldo_coelho.png"));
+		ui->title->setText("He-hey! That was just a joke! Have fun!");
+		ui->text->setText("<p>Do it again if you want! ;)</p><p><i>Created by Diamond00744</i></p>");
 	}
 
 	currentTick++;

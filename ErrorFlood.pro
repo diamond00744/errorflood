@@ -32,4 +32,5 @@ HEADERS += \
 DISTFILES += \
     readme.txt \
     images/bsod.gif \
-    images/icons/stop_by_emey87.png
+    images/icons/stop_by_emey87.png \
+    images/icons/smile_by_everaldo_coelho.png

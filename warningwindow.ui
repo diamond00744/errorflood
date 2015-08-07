@@ -41,7 +41,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Внимание! Произошла критическая ошибка системы.</string>
+    <string>RAM read error in 0x00ff001c block. Please press OK to continue.</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
