@@ -3,7 +3,7 @@
 FullscreenWindow::FullscreenWindow(QWidget *parent) : QWidget(parent)
 {
 	// Make our window without panels
-	this->setWindowFlags( Qt::FramelessWindowHint | Qt::Tool /*| Qt::WindowStaysOnTopHint*/ );
+	this->setWindowFlags( Qt::FramelessWindowHint | Qt::Tool );
 	// Resize refer to desktop
 	QDesktopWidget *desktop = new QDesktopWidget();
 	this->resize( desktop->size() );

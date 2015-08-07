@@ -2,6 +2,8 @@
 
 BlackWindow::BlackWindow(QWidget *parent) : FullscreenWindow(parent)
 {
+	setWindowFlags(Qt::FramelessWindowHint | Qt::Tool | Qt::WindowStaysOnTopHint);
+
 	QPalette Pal(palette());
 	Pal.setColor(QPalette::Background, Qt::black);
 	this->setAutoFillBackground(true);
